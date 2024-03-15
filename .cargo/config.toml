@@ -1,0 +1,12 @@
+[target.aarch64-apple-darwin]
+rustflags = [
+    "-C",
+    "link-arg=-fuse-ld=mold",
+    "-Zshare-generics=y",
+]
+
+[profile.release]
+codegen-units = 1
+lto = "fat"
+strip = "debuginfo"
+opt-level = 3
